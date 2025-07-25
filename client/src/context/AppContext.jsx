@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const AppContext = createContext();
 
@@ -13,6 +13,7 @@ export const useAppContext = () => {
 
 export const AppContextProvider = ({ children }) => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -174,6 +175,7 @@ export const AppContextProvider = ({ children }) => {
         navigateAndClose,
         activeRoute,
         setActiveRoute,
+        location,
         
         // Authentication
         user,

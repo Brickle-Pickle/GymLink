@@ -1,0 +1,31 @@
+{
+    "title": "Entrenamientos Recientes",
+    "subtitle": "Resumen de tu actividad reciente",
+    "emptyState": {
+        "title": "No hay entrenamientos recientes",
+        "description": "¡Comienza tu primer entrenamiento hoy!",
+        "actionText": "Crear Entrenamiento"
+    },
+    "workoutCard": {
+        "duration": "Duración",
+        "exercises": "ejercicios",
+        "sets": "series",
+        "viewDetails": "Ver Detalles",
+        "timeAgo": {
+            "today": "Hoy",
+            "yesterday": "Ayer",
+            "daysAgo": "hace {days} días",
+            "weeksAgo": "hace {weeks} semanas"
+        }
+    },
+    "stats": {
+        "totalDuration": "Tiempo Total",
+        "totalExercises": "Ejercicios",
+        "totalSets": "Series Totales",
+        "averageDuration": "Duración Promedio"
+    },
+    "actions": {
+        "viewAll": "Ver Todos",
+        "newWorkout": "Nuevo Entrenamiento"
+    }
+}
