@@ -1,4 +1,4 @@
-# FitTracker - Aplicación de Fitness Social
+# GymLink - Aplicación de Fitness Social
 
 Una aplicación web de fitness que permite a los usuarios trackear sus entrenamientos, crear rutinas personalizadas y competir con amigos en leaderboards. Inspirada en FitNotes pero con características sociales y públicas.
 
@@ -319,10 +319,10 @@ Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE.md para detall
 
 ## 📞 Contacto
 
-- **Desarrollador**: [Tu nombre]
-- **Email**: [tu-email@ejemplo.com]
-- **GitHub**: [tu-usuario-github]
+- **Desarrollador**: [BricklePickle]
+- **Email**: [bricklepicklegs@gmail.com]
+- **GitHub**: [https://github.com/Brickle-Pickle]
 
 ---
 
-**FitTracker** - Transforma tu fitness en una experiencia social y motivadora 💪
+**GymLink** - Transforma tu fitness en una experiencia social y motivadora 💪
