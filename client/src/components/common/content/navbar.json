@@ -1,0 +1,30 @@
+{
+  "brand": {
+    "name": "GymLink",
+    "tagline": "Fitness Social"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "workouts": "Entrenamientos",
+    "routines": "Rutinas",
+    "exercises": "Ejercicios",
+    "social": "Social",
+    "leaderboard": "Ranking",
+    "friends": "Amigos"
+  },
+  "user": {
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse"
+  },
+  "mobile": {
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "tools": {
+    "calculator": "Calculadora 1RM",
+    "timer": "Timer"
+  }
+}
