@@ -1,0 +1,42 @@
+{
+  "greeting": {
+    "morning": "¡Buenos días",
+    "afternoon": "¡Buenas tardes",
+    "evening": "¡Buenas noches",
+    "default": "¡Hola"
+  },
+  "stats": {
+    "workoutsThisWeek": {
+      "label": "Entrenamientos esta semana",
+      "unit": ""
+    },
+    "totalWorkouts": {
+      "label": "Total entrenamientos",
+      "unit": ""
+    },
+    "currentStreak": {
+      "label": "Racha actual",
+      "unit": "días"
+    },
+    "personalRecords": {
+      "label": "Récords personales",
+      "unit": "PRs"
+    }
+  },
+  "quickActions": {
+    "title": "Acciones rápidas",
+    "newWorkout": "Nuevo Entrenamiento",
+    "newRoutine": "Nueva Rutina",
+    "viewProgress": "Ver Progreso"
+  },
+  "motivational": {
+    "messages": [
+      "¡Sigue así, vas genial!",
+      "Cada entrenamiento cuenta",
+      "Tu progreso es increíble",
+      "¡A por otro día de éxito!",
+      "La constancia es la clave",
+      "¡Supérate cada día!"
+    ]
+  }
+}
