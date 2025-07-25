@@ -1,0 +1,47 @@
+{
+  "title": "Progreso de Entrenamientos",
+  "subtitle": "Visualiza tu evolución a lo largo del tiempo",
+  "filters": {
+    "exercise": {
+      "label": "Ejercicio",
+      "placeholder": "Seleccionar ejercicio",
+      "all": "Todos los ejercicios"
+    },
+    "timeRange": {
+      "label": "Período",
+      "options": {
+        "weekly": "Semanal",
+        "monthly": "Mensual",
+        "quarterly": "Trimestral"
+      }
+    }
+  },
+  "chart": {
+    "noData": "No hay datos disponibles para el período seleccionado",
+    "loading": "Cargando datos...",
+    "axes": {
+      "weight": "Peso (kg)",
+      "reps": "Repeticiones",
+      "time": "Tiempo (min)",
+      "distance": "Distancia (km)",
+      "date": "Fecha"
+    },
+    "tooltips": {
+      "weight": "Peso máximo",
+      "reps": "Repeticiones máximas",
+      "time": "Mejor tiempo",
+      "distance": "Mayor distancia",
+      "sets": "Series completadas"
+    }
+  },
+  "stats": {
+    "improvement": "Mejora",
+    "bestSession": "Mejor sesión",
+    "totalSessions": "Sesiones totales",
+    "averageProgress": "Progreso promedio"
+  },
+  "messages": {
+    "noExercises": "No tienes ejercicios registrados aún",
+    "startWorkout": "Comienza tu primer entrenamiento para ver tu progreso aquí"
+  }
+}
