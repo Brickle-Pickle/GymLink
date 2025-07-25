@@ -1,0 +1,123 @@
+{
+  "brand": {
+    "name": "GymLink",
+    "tagline": "Transforma tu fitness en una experiencia social y motivadora",
+    "description": "La aplicación de fitness social que te permite trackear entrenamientos, crear rutinas y competir con amigos."
+  },
+  "sections": {
+    "features": {
+      "title": "Características",
+      "links": [
+        {
+          "text": "Seguimiento de Entrenamientos",
+          "url": "/features/tracking"
+        },
+        {
+          "text": "Rutinas Personalizadas",
+          "url": "/features/routines"
+        },
+        {
+          "text": "Leaderboards",
+          "url": "/features/leaderboards"
+        },
+        {
+          "text": "Calculadora 1RM",
+          "url": "/tools/1rm-calculator"
+        }
+      ]
+    },
+    "community": {
+      "title": "Comunidad",
+      "links": [
+        {
+          "text": "Encuentra Amigos",
+          "url": "/community/friends"
+        },
+        {
+          "text": "Comparte Rutinas",
+          "url": "/community/share"
+        },
+        {
+          "text": "Ejercicios Personalizados",
+          "url": "/community/exercises"
+        },
+        {
+          "text": "Foro de Ayuda",
+          "url": "/community/help"
+        }
+      ]
+    },
+    "support": {
+      "title": "Soporte",
+      "links": [
+        {
+          "text": "Centro de Ayuda",
+          "url": "/support/help"
+        },
+        {
+          "text": "Contacto",
+          "url": "/support/contact"
+        },
+        {
+          "text": "Reportar Bug",
+          "url": "/support/bug-report"
+        },
+        {
+          "text": "Sugerencias",
+          "url": "/support/feedback"
+        }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        {
+          "text": "Términos de Uso",
+          "url": "/legal/terms"
+        },
+        {
+          "text": "Política de Privacidad",
+          "url": "/legal/privacy"
+        },
+        {
+          "text": "Cookies",
+          "url": "/legal/cookies"
+        }
+      ]
+    }
+  },
+  "social": {
+    "title": "Síguenos",
+    "links": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/Brickle-Pickle",
+        "icon": "FaGithub"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/gymlink",
+        "icon": "FaTwitter"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/gymlink",
+        "icon": "FaInstagram"
+      },
+      {
+        "platform": "Discord",
+        "url": "https://discord.gg/gymlink",
+        "icon": "FaDiscord"
+      }
+    ]
+  },
+  "contact": {
+    "email": "bricklepicklegs@gmail.com",
+    "developer": "BricklePickle"
+  },
+  "copyright": {
+    "year": "2024",
+    "text": "Todos los derechos reservados.",
+    "license": "Licencia MIT"
+  }
+}

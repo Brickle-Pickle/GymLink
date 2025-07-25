@@ -7,6 +7,7 @@ import { AppContextProvider } from './context/AppContext'
 import Home from './user_pages/Home'
 // Common
 import Navbar from './components/common/Navbar'
+import Footer from './components/common/Footer'
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                             {/* Add more routes here as needed */}
                         </Routes>
                     </main>
+                    <Footer />
                 </div>
             </AppContextProvider>
         </Router>
