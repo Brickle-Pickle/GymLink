@@ -1,0 +1,37 @@
+{
+  "title": "Actividad de Amigos",
+  "noFriends": {
+    "title": "¡Conecta con amigos!",
+    "subtitle": "Comparte tu código QR para que otros puedan agregarte",
+    "qrTitle": "Tu código QR",
+    "addFriendsButton": "Buscar Amigos",
+    "scanQrButton": "Escanear QR"
+  },
+  "withFriends": {
+    "title": "Actividad Reciente",
+    "viewAllButton": "Ver Todo",
+    "noRecentActivity": "No hay actividad reciente",
+    "activityTypes": {
+      "workout": "completó un entrenamiento",
+      "pr": "estableció un nuevo récord personal",
+      "routine": "creó una nueva rutina",
+      "achievement": "desbloqueó un logro"
+    },
+    "timeAgo": {
+      "justNow": "Ahora mismo",
+      "minutesAgo": "hace {minutes} min",
+      "hoursAgo": "hace {hours}h",
+      "daysAgo": "hace {days}d",
+      "weeksAgo": "hace {weeks}sem"
+    }
+  },
+  "actions": {
+    "like": "Me gusta",
+    "comment": "Comentar",
+    "share": "Compartir"
+  },
+  "loading": {
+    "loadingActivity": "Cargando actividad...",
+    "generatingQr": "Generando código QR..."
+  }
+}
