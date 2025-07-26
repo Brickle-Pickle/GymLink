@@ -8,7 +8,7 @@ import Home from './user_pages/Home'
 import Workouts from './user_pages/Workouts'
 // Sub pages
 import WorkoutsCreate from './user_pages/WorkoutsCreate'
-import WorkoutsHistory from './user_pages/WorkoutsHistory'
+import WorkoutsHistory from './components/workouts/WorkoutHistory'
 // Common
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'

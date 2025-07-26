@@ -1,0 +1,69 @@
+{
+    "title": "Historial de Entrenamientos",
+    "subtitle": "Revisa todos tus entrenamientos anteriores y tu progreso",
+    "emptyState": {
+        "title": "No hay entrenamientos registrados",
+        "message": "Comienza tu primer entrenamiento para ver tu historial aquí",
+        "buttonText": "Crear Entrenamiento"
+    },
+    "filters": {
+        "all": "Todos",
+        "thisWeek": "Esta Semana",
+        "thisMonth": "Este Mes",
+        "last3Months": "Últimos 3 Meses",
+        "thisYear": "Este Año"
+    },
+    "search": {
+        "placeholder": "Buscar por ejercicio o fecha..."
+    },
+    "workoutCard": {
+        "duration": "Duración",
+        "exercises": "ejercicios",
+        "exercise": "ejercicio",
+        "sets": "series",
+        "set": "serie",
+        "viewDetails": "Ver Detalles",
+        "personalRecord": "¡Récord Personal!",
+        "today": "Hoy",
+        "yesterday": "Ayer",
+        "daysAgo": "hace {days} días",
+        "weeksAgo": "hace {weeks} semanas",
+        "monthsAgo": "hace {months} meses"
+    },
+    "stats": {
+        "totalWorkouts": "Total de Entrenamientos",
+        "totalTime": "Tiempo Total",
+        "averageDuration": "Duración Promedio",
+        "favoriteExercise": "Ejercicio Favorito",
+        "currentStreak": "Racha Actual",
+        "longestStreak": "Racha Más Larga",
+        "days": "días",
+        "hours": "horas",
+        "minutes": "minutos"
+    },
+    "sorting": {
+        "newest": "Más Recientes",
+        "oldest": "Más Antiguos",
+        "duration": "Por Duración",
+        "exercises": "Por Ejercicios"
+    },
+    "loading": {
+        "message": "Cargando historial de entrenamientos..."
+    },
+    "error": {
+        "title": "Error al cargar el historial",
+        "message": "No se pudo cargar el historial de entrenamientos. Inténtalo de nuevo.",
+        "retryButton": "Reintentar"
+    },
+    "units": {
+        "kg": "kg",
+        "lbs": "lbs",
+        "reps": "reps",
+        "seconds": "seg",
+        "minutes": "min",
+        "hours": "h",
+        "km": "km",
+        "miles": "millas",
+        "meters": "m"
+    }
+}
