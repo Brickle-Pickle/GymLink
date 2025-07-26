@@ -6,6 +6,9 @@ import { AppContextProvider, useAppContext } from './context/AppContext'
 // Pages
 import Home from './user_pages/Home'
 import Workouts from './user_pages/Workouts'
+// Sub pages
+import WorkoutsCreate from './user_pages/WorkoutsCreate'
+import WorkoutsHistory from './user_pages/WorkoutsHistory'
 // Common
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
@@ -25,6 +28,8 @@ function AppContent() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/workouts" element={<Workouts />} />
+                    <Route path="/workouts/create" element={<WorkoutsCreate />} />
+                    <Route path="/workouts/history" element={<WorkoutsHistory />} />
                 </Routes>
             </main>
             <Footer />

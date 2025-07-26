@@ -18,8 +18,8 @@ export const AppContextProvider = ({ children }) => {
     const [error, setError] = useState(null);
 
     // User authentication state
-    const [user, setUser] = useState(true);
-    const [isAuthenticated, setIsAuthenticated] = useState(true);
+    const [user, setUser] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     
     // UI state
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

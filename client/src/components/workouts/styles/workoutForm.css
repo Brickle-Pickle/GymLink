@@ -1,0 +1,602 @@
+/* Workout Form Component - Siguiendo el patrón de diseño global */
+.workout_form {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-6);
+}
+
+.workout_form__container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Header Section - Siguiendo el patrón de otros componentes */
+.workout_form__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-6);
+    gap: var(--spacing-4);
+}
+
+.workout_form__title-section {
+    flex: 1;
+}
+
+.workout_form__title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-1);
+    line-height: var(--line-height-tight);
+}
+
+.workout_form__title-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+}
+
+.workout_form__subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-normal);
+}
+
+/* Form Layout */
+.workout_form__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+}
+
+.workout_form__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.workout_form__section-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-2);
+    padding-bottom: var(--spacing-2);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.workout_form__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+}
+
+.workout_form__row--two-columns {
+    grid-template-columns: 1fr 1fr;
+}
+
+.workout_form__row--three-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Field Styling */
+.workout_form__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.workout_form__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.workout_form__label--required::after {
+    content: "*";
+    color: var(--color-error);
+    font-weight: var(--font-weight-bold);
+    margin-left: var(--spacing-1);
+}
+
+/* Input Controls */
+.workout_form__input,
+.workout_form__select,
+.workout_form__textarea {
+    padding: var(--spacing-3) var(--spacing-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family-primary);
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: var(--transition-fast);
+    outline: none;
+}
+
+.workout_form__input:focus,
+.workout_form__select:focus,
+.workout_form__textarea:focus {
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.workout_form__input:hover,
+.workout_form__select:hover,
+.workout_form__textarea:hover {
+    border-color: var(--color-border-dark);
+}
+
+.workout_form__input--error,
+.workout_form__select--error,
+.workout_form__textarea--error {
+    border-color: var(--color-error);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.workout_form__textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: var(--font-family-primary);
+}
+
+/* Select Styling */
+.workout_form__select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right var(--spacing-3) center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: var(--spacing-10);
+}
+
+/* Instructions Section */
+.workout_form__instructions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.workout_form__instruction-item {
+    display: flex;
+    gap: var(--spacing-3);
+    align-items: flex-start;
+    padding: var(--spacing-3);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.workout_form__instruction-item:hover {
+    border-color: var(--color-border-dark);
+}
+
+.workout_form__instruction-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-primary-100);
+    color: var(--color-primary-700);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    flex-shrink: 0;
+    margin-top: var(--spacing-1);
+}
+
+.workout_form__instruction-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: var(--spacing-2) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    outline: none;
+}
+
+.workout_form__instruction-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.workout_form__remove-instruction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-error);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacing-1);
+}
+
+.workout_form__remove-instruction:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_form__add-instruction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-4);
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.workout_form__add-instruction:hover {
+    background: var(--color-primary-50);
+    border-color: var(--color-primary);
+    border-style: solid;
+}
+
+.workout_form__add-instruction:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: var(--color-text-light);
+}
+
+.workout_form__add-instruction:disabled:hover {
+    background: transparent;
+    border-color: var(--color-border);
+    border-style: dashed;
+}
+
+.workout_form__instructions-limit {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--spacing-2);
+}
+
+/* Checkbox Field */
+.workout_form__checkbox-field {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.workout_form__checkbox-field:hover {
+    border-color: var(--color-border-dark);
+}
+
+.workout_form__checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.workout_form__checkbox-content {
+    flex: 1;
+}
+
+.workout_form__checkbox-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    cursor: pointer;
+    display: block;
+    margin-bottom: var(--spacing-1);
+}
+
+.workout_form__checkbox-description {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Error Messages */
+.workout_form__error {
+    font-size: var(--font-size-xs);
+    color: var(--color-error);
+    margin-top: var(--spacing-1);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+}
+
+.workout_form__error::before {
+    content: "⚠";
+    font-size: var(--font-size-sm);
+}
+
+/* Character Count */
+.workout_form__char-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    text-align: right;
+    margin-top: var(--spacing-1);
+}
+
+.workout_form__char-count--warning {
+    color: var(--color-warning);
+}
+
+.workout_form__char-count--error {
+    color: var(--color-error);
+}
+
+/* Tooltip */
+.workout_form__tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: var(--color-text-light);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    cursor: help;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.workout_form__tooltip:hover {
+    background: var(--color-primary);
+}
+
+.workout_form__tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-text);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-normal);
+    white-space: nowrap;
+    z-index: var(--z-tooltip);
+    box-shadow: var(--shadow-md);
+    max-width: 200px;
+    white-space: normal;
+    text-align: center;
+}
+
+/* Actions Section */
+.workout_form__actions {
+    display: flex;
+    gap: var(--spacing-3);
+    justify-content: flex-end;
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-border);
+}
+
+/* Buttons */
+.workout_form__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border: 1px solid transparent;
+    min-width: 120px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.workout_form__button--primary {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-primary);
+}
+
+.workout_form__button--primary:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.workout_form__button--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.workout_form__button--secondary:hover:not(:disabled) {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-dark);
+    transform: translateY(-1px);
+}
+
+.workout_form__button--danger {
+    background: var(--color-error);
+    color: var(--color-text-inverse);
+    border-color: var(--color-error);
+}
+
+.workout_form__button--danger:hover:not(:disabled) {
+    background: #dc2626;
+    border-color: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.workout_form__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading Spinner */
+.workout_form__loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: var(--radius-full);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .workout_form {
+        padding: var(--spacing-5);
+    }
+    
+    .workout_form__row--three-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .workout_form {
+        margin: var(--spacing-4);
+        padding: var(--spacing-4);
+    }
+
+    .workout_form__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-3);
+    }
+
+    .workout_form__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .workout_form__row--two-columns,
+    .workout_form__row--three-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .workout_form__actions {
+        flex-direction: column-reverse;
+        gap: var(--spacing-2);
+    }
+
+    .workout_form__button {
+        width: 100%;
+    }
+
+    .workout_form__instruction-item {
+        flex-direction: column;
+        gap: var(--spacing-2);
+    }
+
+    .workout_form__instruction-number {
+        align-self: flex-start;
+        margin-top: 0;
+    }
+
+    .workout_form__remove-instruction {
+        align-self: flex-end;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .workout_form {
+        margin: var(--spacing-2);
+        padding: var(--spacing-3);
+    }
+
+    .workout_form__header {
+        margin-bottom: var(--spacing-4);
+    }
+
+    .workout_form__form {
+        gap: var(--spacing-4);
+    }
+
+    .workout_form__actions {
+        margin-top: var(--spacing-4);
+        padding-top: var(--spacing-3);
+    }
+
+    .workout_form__instruction-item {
+        padding: var(--spacing-2);
+    }
+
+    .workout_form__checkbox-field {
+        padding: var(--spacing-3);
+    }
+}
+
+/* Focus States for Accessibility */
+.workout_form__input:focus-visible,
+.workout_form__select:focus-visible,
+.workout_form__textarea:focus-visible,
+.workout_form__button:focus-visible,
+.workout_form__checkbox:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .workout_form {
+        border-width: 2px;
+    }
+    
+    .workout_form__input,
+    .workout_form__select,
+    .workout_form__textarea {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .workout_form__button,
+    .workout_form__input,
+    .workout_form__select,
+    .workout_form__textarea,
+    .workout_form__instruction-item,
+    .workout_form__checkbox-field {
+        transition: none;
+    }
+    
+    .workout_form__loading-spinner {
+        animation: none;
+    }
+}
