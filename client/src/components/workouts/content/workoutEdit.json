@@ -1,0 +1,111 @@
+{
+    "title": "Editar Ejercicio",
+    "subtitle": "Modifica los detalles de tu ejercicio",
+    "form": {
+        "exerciseName": {
+            "label": "Nombre del Ejercicio",
+            "placeholder": "Ej: Press Banca, Sentadillas, Flexiones..."
+        },
+        "exerciseType": {
+            "label": "Tipo de Ejercicio",
+            "options": {
+                "reps-weight": "Repeticiones / Peso",
+                "reps-time": "Repeticiones / Tiempo",
+                "time-distance": "Tiempo / Distancia",
+                "reps-only": "Solo Repeticiones",
+                "time-only": "Solo Tiempo",
+                "distance-only": "Solo Distancia"
+            }
+        },
+        "category": {
+            "label": "Categoría",
+            "placeholder": "Selecciona una categoría",
+            "options": {
+                "chest": "Pecho",
+                "back": "Espalda",
+                "shoulders": "Hombros",
+                "arms": "Brazos",
+                "legs": "Piernas",
+                "core": "Core",
+                "cardio": "Cardio",
+                "functional": "Funcional",
+                "custom": "Personalizado"
+            }
+        },
+        "description": {
+            "label": "Descripción",
+            "placeholder": "Describe brevemente el ejercicio..."
+        },
+        "instructions": {
+            "label": "Instrucciones",
+            "placeholder": "Añade instrucciones paso a paso...",
+            "addButton": "Añadir Paso",
+            "removeButton": "Eliminar",
+            "limitMessage": "Máximo 10 pasos por ejercicio"
+        },
+        "muscleGroups": {
+            "label": "Grupos Musculares",
+            "placeholder": "Selecciona los músculos trabajados"
+        },
+        "difficulty": {
+            "label": "Dificultad",
+            "options": {
+                "beginner": "Principiante",
+                "intermediate": "Intermedio",
+                "advanced": "Avanzado"
+            }
+        },
+        "equipment": {
+            "label": "Equipamiento",
+            "placeholder": "Ej: Barra, Mancuernas, Peso corporal..."
+        },
+        "isPublic": {
+            "label": "Hacer público",
+            "description": "Permitir que otros usuarios vean y usen este ejercicio"
+        }
+    },
+    "buttons": {
+        "save": "Guardar Cambios",
+        "cancel": "Cancelar",
+        "saving": "Guardando...",
+        "reset": "Restaurar",
+        "delete": "Eliminar Ejercicio"
+    },
+    "messages": {
+        "success": "Ejercicio actualizado exitosamente",
+        "error": "Error al actualizar el ejercicio",
+        "loadingError": "Error al cargar el ejercicio",
+        "notFound": "Ejercicio no encontrado",
+        "deleteSuccess": "Ejercicio eliminado exitosamente",
+        "deleteError": "Error al eliminar el ejercicio",
+        "validation": {
+            "nameRequired": "El nombre del ejercicio es obligatorio",
+            "typeRequired": "Selecciona un tipo de ejercicio",
+            "categoryRequired": "Selecciona una categoría",
+            "nameMinLength": "El nombre debe tener al menos 3 caracteres",
+            "nameMaxLength": "El nombre no puede exceder 50 caracteres",
+            "descriptionMaxLength": "La descripción no puede exceder 200 caracteres",
+            "instructionsLimit": "No puedes añadir más de 10 pasos"
+        }
+    },
+    "tooltips": {
+        "exerciseType": "Selecciona cómo se mide el progreso de este ejercicio",
+        "category": "Ayuda a organizar tus ejercicios por grupo muscular",
+        "difficulty": "Nivel recomendado para realizar este ejercicio de forma segura",
+        "isPublic": "Los ejercicios públicos pueden ser utilizados por otros usuarios de la comunidad"
+    },
+    "confirmations": {
+        "delete": {
+            "title": "¿Eliminar ejercicio?",
+            "message": "Esta acción no se puede deshacer. Se eliminará el ejercicio y todo su historial.",
+            "confirm": "Sí, eliminar",
+            "cancel": "Cancelar"
+        },
+        "unsavedChanges": {
+            "title": "¿Descartar cambios?",
+            "message": "Tienes cambios sin guardar. ¿Estás seguro de que quieres salir?",
+            "confirm": "Sí, descartar",
+            "cancel": "Continuar editando"
+        }
+    }
+}
