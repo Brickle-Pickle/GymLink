@@ -1,0 +1,32 @@
+{
+    "title": "Calendario de Entrenamientos",
+    "filters": {
+        "lastWeek": "Última Semana",
+        "lastMonth": "Último Mes",
+        "lastQuarter": "Último Trimestre"
+    },
+    "calendar": {
+        "months": [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ],
+        "daysShort": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+        "daysLong": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+        "today": "Hoy",
+        "noWorkouts": "Sin entrenamientos",
+        "workoutDay": "Día de entrenamiento",
+        "workoutsCount": "entrenamientos"
+    },
+    "navigation": {
+        "previousMonth": "Mes anterior",
+        "nextMonth": "Mes siguiente",
+        "previousWeek": "Semana anterior",
+        "nextWeek": "Semana siguiente"
+    },
+    "stats": {
+        "totalWorkouts": "Total de entrenamientos",
+        "workoutDays": "Días entrenados",
+        "restDays": "Días de descanso",
+        "averagePerWeek": "Promedio por semana"
+    }
+}

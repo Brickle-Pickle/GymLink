@@ -1,0 +1,493 @@
+.workout_calendar {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-5);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px; /* More compact for desktop */
+    margin: var(--spacing-5) auto;
+}
+
+/* Decorative header bar like other components */
+.workout_calendar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary) 0%,
+        var(--color-secondary) 50%,
+        var(--color-accent) 100%
+    );
+}
+
+/* Header Section */
+.workout_calendar .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-5);
+    gap: var(--spacing-4);
+}
+
+.workout_calendar .header-left {
+    flex: 1;
+}
+
+.workout_calendar .calendar-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-1) 0;
+    line-height: var(--line-height-tight);
+}
+
+.workout_calendar .calendar-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-normal);
+    margin: 0;
+}
+
+/* Filter Buttons */
+.workout_calendar .filter-buttons {
+    display: flex;
+    gap: var(--spacing-2);
+    flex-wrap: wrap;
+}
+
+.workout_calendar .filter-btn {
+    padding: var(--spacing-2) var(--spacing-4);
+    border: 1px solid var(--color-border);
+    background: var(--color-background-secondary);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: var(--transition-base);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.workout_calendar .filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: var(--transition-base);
+}
+
+.workout_calendar .filter-btn:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_calendar .filter-btn:hover::before {
+    left: 100%;
+}
+
+.workout_calendar .filter-btn.active {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Calendar Navigation */
+.workout_calendar .calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-4);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-light);
+}
+
+.workout_calendar .nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
+}
+
+.workout_calendar .nav-button:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-base);
+}
+
+.workout_calendar .current-period {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    text-align: center;
+    min-width: 180px;
+}
+
+/* Calendar Grid */
+.workout_calendar .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-1);
+    margin-bottom: var(--spacing-5);
+    background: var(--color-background-secondary);
+    padding: var(--spacing-3);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-light);
+}
+
+.workout_calendar .calendar-header-day {
+    padding: var(--spacing-2);
+    text-align: center;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+    border-radius: var(--radius-base);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.workout_calendar .calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-1);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-base);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+    background: var(--color-surface);
+    min-height: 48px; /* Smaller for desktop */
+}
+
+.workout_calendar .calendar-day:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-50);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_calendar .calendar-day.other-month {
+    color: var(--color-text-light);
+    background: var(--color-background-tertiary);
+    opacity: 0.6;
+}
+
+.workout_calendar .calendar-day.today {
+    border-color: var(--color-primary);
+    background: var(--color-primary-50);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_calendar .calendar-day.workout-day {
+    background: var(--color-secondary-100);
+    border-color: var(--color-secondary-300);
+    color: var(--color-secondary-800);
+}
+
+.workout_calendar .calendar-day.workout-day:hover {
+    background: var(--color-secondary-200);
+    border-color: var(--color-secondary-400);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-base);
+}
+
+.workout_calendar .day-number {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-1);
+}
+
+.workout_calendar .workout-indicator {
+    width: 4px;
+    height: 4px;
+    background: var(--color-secondary);
+    border-radius: var(--radius-full);
+    margin-top: auto;
+    animation: pulse 2s infinite;
+}
+
+.workout_calendar .workout-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-secondary-700);
+    font-weight: var(--font-weight-medium);
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    background: var(--color-secondary);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-full);
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Stats Section */
+.workout_calendar .calendar-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-light);
+}
+
+.workout_calendar .stat-item {
+    text-align: center;
+    padding: var(--spacing-3);
+    background: var(--color-surface);
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
+    transition: var(--transition-fast);
+}
+
+.workout_calendar .stat-item:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-base);
+}
+
+.workout_calendar .stat-value {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-1);
+    line-height: var(--line-height-tight);
+}
+
+.workout_calendar .stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Loading and Empty States */
+.workout_calendar .loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: var(--color-text-secondary);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-light);
+}
+
+.workout_calendar .empty-state {
+    text-align: center;
+    padding: var(--spacing-8);
+    color: var(--color-text-secondary);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-light);
+}
+
+.workout_calendar .empty-state-text {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2);
+    font-weight: var(--font-weight-medium);
+}
+
+.workout_calendar .empty-state-subtext {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .workout_calendar {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .workout_calendar .calendar-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .workout_calendar {
+        padding: var(--spacing-4);
+    }
+    
+    .workout_calendar .calendar-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-3);
+    }
+    
+    .workout_calendar .calendar-title {
+        font-size: var(--font-size-xl);
+        text-align: center;
+    }
+    
+    .workout_calendar .filter-buttons {
+        justify-content: center;
+    }
+    
+    .workout_calendar .filter-btn {
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+    }
+    
+    .workout_calendar .calendar-navigation {
+        margin-bottom: var(--spacing-3);
+        padding: var(--spacing-2) var(--spacing-3);
+    }
+    
+    .workout_calendar .current-period {
+        font-size: var(--font-size-base);
+        min-width: 140px;
+    }
+    
+    .workout_calendar .calendar-day {
+        min-height: 40px;
+        padding: var(--spacing-1);
+    }
+    
+    .workout_calendar .day-number {
+        font-size: var(--font-size-xs);
+    }
+    
+    .workout_calendar .calendar-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-2);
+        padding: var(--spacing-3);
+    }
+    
+    .workout_calendar .stat-item {
+        padding: var(--spacing-2);
+    }
+    
+    .workout_calendar .stat-value {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .workout_calendar {
+        padding: var(--spacing-3);
+    }
+    
+    .workout_calendar .filter-buttons {
+        flex-direction: column;
+    }
+    
+    .workout_calendar .calendar-grid {
+        gap: 1px;
+        padding: var(--spacing-2);
+    }
+    
+    .workout_calendar .calendar-day {
+        min-height: 36px;
+        padding: var(--spacing-1);
+    }
+    
+    .workout_calendar .calendar-header-day {
+        padding: var(--spacing-1);
+        font-size: 10px;
+    }
+    
+    .workout_calendar .calendar-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .workout_calendar .nav-button {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .workout_calendar .current-period {
+        font-size: var(--font-size-sm);
+        min-width: 120px;
+    }
+}
+
+/* Accessibility */
+.workout_calendar .calendar-day:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.workout_calendar .filter-btn:focus,
+.workout_calendar .nav-button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.9);
+    }
+}
+
+/* Smooth transitions for calendar changes */
+.workout_calendar .calendar-grid {
+    transition: var(--transition-base);
+}
+
+.workout_calendar .calendar-day {
+    transition: all var(--transition-fast);
+}
+
+/* Focus states for better accessibility */
+.workout_calendar .calendar-day:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    z-index: 1;
+}
+
+.workout_calendar .filter-btn:focus-visible,
+.workout_calendar .nav-button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
