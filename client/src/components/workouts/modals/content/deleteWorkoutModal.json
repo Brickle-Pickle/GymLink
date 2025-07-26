@@ -1,0 +1,31 @@
+{
+    "title": "Eliminar Ejercicio",
+    "subtitle": "Esta acción no se puede deshacer",
+    "warning": {
+        "title": "¿Estás seguro?",
+        "description": "Estás a punto de eliminar permanentemente este ejercicio. Se perderán todos los datos asociados, incluyendo:",
+        "consequences": [
+            "Historial de entrenamientos",
+            "Mejores marcas registradas",
+            "Estadísticas y progreso",
+            "Configuración personalizada"
+        ]
+    },
+    "exerciseInfo": {
+        "name": "Ejercicio:",
+        "category": "Categoría:",
+        "evaluationType": "Tipo de evaluación:",
+        "bestRecord": "Mejor marca:",
+        "createdAt": "Creado el:"
+    },
+    "actions": {
+        "cancel": "Cancelar",
+        "delete": "Eliminar Ejercicio",
+        "deleting": "Eliminando..."
+    },
+    "messages": {
+        "deleteSuccess": "Ejercicio eliminado",
+        "deleteError": "Error al eliminar",
+        "deleteErrorDescription": "No se pudo eliminar el ejercicio. Inténtalo de nuevo más tarde."
+    }
+}

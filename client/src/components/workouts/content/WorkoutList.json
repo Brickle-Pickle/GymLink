@@ -1,0 +1,51 @@
+{
+    "title": "Mis Ejercicios",
+    "subtitle": "Gestiona todos tus ejercicios personalizados",
+    "emptyState": {
+        "title": "No tienes ejercicios creados",
+        "description": "¡Crea tu primer ejercicio personalizado y comienza a entrenar!",
+        "actionText": "Crear Ejercicio"
+    },
+    "exerciseCard": {
+        "evaluationType": "Evaluado por",
+        "bestRecord": "Mejor marca",
+        "editButton": "Editar",
+        "deleteButton": "Eliminar",
+        "confirmDelete": "¿Estás seguro de que quieres eliminar este ejercicio?",
+        "deleteSuccess": "Ejercicio eliminado correctamente",
+        "deleteError": "Error al eliminar el ejercicio"
+    },
+    "evaluationTypes": {
+        "reps": "repeticiones",
+        "time": "tiempo",
+        "weight": "peso",
+        "distance": "distancia",
+        "reps_weight": "reps/peso",
+        "reps_time": "reps/tiempo",
+        "time_distance": "tiempo/distancia"
+    },
+    "units": {
+        "reps": "reps",
+        "kg": "kg",
+        "lbs": "lbs",
+        "seconds": "seg",
+        "minutes": "min",
+        "hours": "h",
+        "meters": "m",
+        "kilometers": "km",
+        "miles": "mi"
+    },
+    "actions": {
+        "createExercise": "Crear Ejercicio",
+        "viewAll": "Ver Todos",
+        "filter": "Filtrar",
+        "search": "Buscar ejercicios..."
+    },
+    "filters": {
+        "all": "Todos",
+        "reps": "Repeticiones",
+        "time": "Tiempo",
+        "weight": "Peso",
+        "distance": "Distancia"
+    }
+}

@@ -1,0 +1,470 @@
+/* Modal Overlay */
+.delete_workout_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    padding: var(--spacing-4);
+}
+
+.delete_workout_modal--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Container */
+.delete_workout_modal__container {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+    border: 1px solid var(--color-border);
+    max-width: 480px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.95) translateY(var(--spacing-4));
+    transition: transform var(--transition-base);
+    position: relative;
+}
+
+.delete_workout_modal--visible .delete_workout_modal__container {
+    transform: scale(1) translateY(0);
+}
+
+/* Header decorativo similar al resto de componentes */
+.delete_workout_modal__container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-error) 0%,
+        #dc2626 50%,
+        #b91c1c 100%
+    );
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+/* Header */
+.delete_workout_modal__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--spacing-6);
+    border-bottom: 1px solid var(--color-border-light);
+    background: var(--color-background);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.delete_workout_modal__header-content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+    flex: 1;
+}
+
+.delete_workout_modal__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-error);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-xl);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.delete_workout_modal__title-section {
+    flex: 1;
+}
+
+.delete_workout_modal__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-1) 0;
+    line-height: var(--line-height-tight);
+}
+
+.delete_workout_modal__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+}
+
+.delete_workout_modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-lg);
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.delete_workout_modal__close:hover:not(:disabled) {
+    background: var(--color-background-tertiary);
+    color: var(--color-text);
+}
+
+.delete_workout_modal__close:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Content */
+.delete_workout_modal__content {
+    padding: var(--spacing-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+}
+
+/* Warning Section */
+.delete_workout_modal__warning {
+    padding: var(--spacing-4);
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-error);
+}
+
+.delete_workout_modal__warning-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-error);
+    margin: 0 0 var(--spacing-2) 0;
+}
+
+.delete_workout_modal__warning-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-3) 0;
+    line-height: var(--line-height-relaxed);
+}
+
+.delete_workout_modal__consequences {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.delete_workout_modal__consequence {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    position: relative;
+    padding-left: var(--spacing-4);
+}
+
+.delete_workout_modal__consequence::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-error);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Exercise Info */
+.delete_workout_modal__exercise {
+    padding: var(--spacing-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.delete_workout_modal__exercise-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+}
+
+.delete_workout_modal__exercise-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.delete_workout_modal__exercise-info {
+    flex: 1;
+}
+
+.delete_workout_modal__exercise-name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-1) 0;
+}
+
+.delete_workout_modal__exercise-category {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    background: var(--color-background-tertiary);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--radius-base);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.delete_workout_modal__exercise-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.delete_workout_modal__exercise-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-2) 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.delete_workout_modal__exercise-detail:last-child {
+    border-bottom: none;
+}
+
+.delete_workout_modal__exercise-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.delete_workout_modal__exercise-value {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+    text-align: right;
+}
+
+/* Actions */
+.delete_workout_modal__actions {
+    display: flex;
+    gap: var(--spacing-3);
+    padding: var(--spacing-6);
+    border-top: 1px solid var(--color-border-light);
+    background: var(--color-background);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.delete_workout_modal__btn {
+    flex: 1;
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    min-height: 44px;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-family-primary);
+}
+
+.delete_workout_modal__btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.delete_workout_modal__btn--cancel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.delete_workout_modal__btn--cancel:hover:not(:disabled) {
+    background: var(--color-background-secondary);
+    border-color: var(--color-border-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.delete_workout_modal__btn--delete {
+    background: var(--color-error);
+    border: 1px solid var(--color-error);
+    color: var(--color-text-inverse);
+    position: relative;
+}
+
+.delete_workout_modal__btn--delete::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: var(--transition-base);
+}
+
+.delete_workout_modal__btn--delete:hover:not(:disabled) {
+    background: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.delete_workout_modal__btn--delete:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+/* Loading State */
+.delete_workout_modal__btn--delete:disabled {
+    background: var(--color-text-light);
+    border-color: var(--color-text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .delete_workout_modal {
+        padding: var(--spacing-3);
+    }
+    
+    .delete_workout_modal__container {
+        max-height: 95vh;
+    }
+    
+    .delete_workout_modal__header {
+        padding: var(--spacing-4);
+    }
+    
+    .delete_workout_modal__content {
+        padding: var(--spacing-4);
+        gap: var(--spacing-4);
+    }
+    
+    .delete_workout_modal__actions {
+        padding: var(--spacing-4);
+        flex-direction: column;
+    }
+    
+    .delete_workout_modal__exercise-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-1);
+    }
+    
+    .delete_workout_modal__exercise-value {
+        text-align: left;
+    }
+    
+    .delete_workout_modal__header-content {
+        gap: var(--spacing-3);
+    }
+    
+    .delete_workout_modal__icon {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .delete_workout_modal__title {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .delete_workout_modal__exercise-header {
+        gap: var(--spacing-2);
+    }
+    
+    .delete_workout_modal__exercise-icon {
+        width: 36px;
+        height: 36px;
+        font-size: var(--font-size-base);
+    }
+    
+    .delete_workout_modal__exercise-name {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .delete_workout_modal,
+    .delete_workout_modal__container,
+    .delete_workout_modal__btn,
+    .delete_workout_modal__close {
+        transition: none;
+    }
+    
+    .delete_workout_modal__btn--delete::before {
+        display: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .delete_workout_modal__container {
+        border-width: 2px;
+    }
+    
+    .delete_workout_modal__warning {
+        border-width: 2px;
+        border-left-width: 4px;
+    }
+    
+    .delete_workout_modal__exercise {
+        border-width: 2px;
+    }
+}
+
+/* Focus states for keyboard navigation */
+.delete_workout_modal__close:focus-visible,
+.delete_workout_modal__btn:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+}
+
+/* Dark mode support (if implemented) */
+@media (prefers-color-scheme: dark) {
+    .delete_workout_modal {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
