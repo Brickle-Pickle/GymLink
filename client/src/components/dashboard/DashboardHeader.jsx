@@ -86,13 +86,13 @@ const DashboardHeader = () => {
     {
       key: 'newWorkout',
       icon: FiPlus,
-      action: () => navigate('/workouts/new'),
+      action: () => navigate('/workouts/create'),
       variant: 'primary'
     },
     {
       key: 'newRoutine',
       icon: FiCalendar,
-      action: () => navigate('/routines/new'),
+      action: () => navigate('/routines/create'),
       variant: 'secondary'
     },
     {

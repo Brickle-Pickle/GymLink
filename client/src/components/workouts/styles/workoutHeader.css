@@ -1,0 +1,335 @@
+.workout_header {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-6);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.workout_header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary) 0%,
+        var(--color-secondary) 50%,
+        var(--color-accent) 100%
+    );
+}
+
+.workout_header__container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+/* Sección de título */
+.workout_header__title-section {
+    text-align: center;
+}
+
+.workout_header__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-2);
+    line-height: var(--line-height-tight);
+}
+
+.workout_header__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-normal);
+}
+
+/* Sección motivacional */
+.workout_header__motivation {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary-50) 0%,
+        var(--color-secondary-50) 100%
+    );
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    text-align: center;
+    border: 1px solid var(--color-border-light);
+    position: relative;
+}
+
+.workout_header__quote-container {
+    position: relative;
+}
+
+.workout_header__quote {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    line-height: var(--line-height-relaxed);
+    font-style: italic;
+    margin-bottom: var(--spacing-2);
+    cursor: pointer;
+    transition: var(--transition-base);
+    padding: var(--spacing-2);
+    border-radius: var(--radius-md);
+}
+
+.workout_header__quote:hover {
+    background: var(--color-surface);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.workout_header__quote-hint {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.workout_header__motivation:hover .workout_header__quote-hint {
+    opacity: 1;
+}
+
+/* Botones de acción */
+.workout_header__actions {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.workout_header__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+    min-width: 180px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.workout_header__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: var(--transition-base);
+}
+
+.workout_header__button:hover::before {
+    left: 100%;
+}
+
+.workout_header__button--primary {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_header__button--primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.workout_header__button--primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_header__button--secondary {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_header__button--secondary:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.workout_header__button--secondary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.workout_header__button-icon {
+    font-size: var(--font-size-lg);
+    line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .workout_header {
+        padding: var(--spacing-4);
+        margin-bottom: var(--spacing-4);
+    }
+
+    .workout_header__container {
+        gap: var(--spacing-4);
+    }
+
+    .workout_header__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .workout_header__subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .workout_header__motivation {
+        padding: var(--spacing-4);
+    }
+
+    .workout_header__quote {
+        font-size: var(--font-size-lg);
+    }
+
+    .workout_header__actions {
+        flex-direction: column;
+        gap: var(--spacing-3);
+    }
+
+    .workout_header__button {
+        min-width: 100%;
+        padding: var(--spacing-4) var(--spacing-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .workout_header {
+        padding: var(--spacing-3);
+        border-radius: var(--radius-md);
+    }
+
+    .workout_header__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .workout_header__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .workout_header__motivation {
+        padding: var(--spacing-3);
+    }
+
+    .workout_header__quote {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-1);
+    }
+
+    .workout_header__button {
+        padding: var(--spacing-3) var(--spacing-4);
+        font-size: var(--font-size-sm);
+    }
+
+    .workout_header__button-icon {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.workout_header__container > * {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.workout_header__title-section {
+    animation-delay: 0.1s;
+}
+
+.workout_header__motivation {
+    animation-delay: 0.2s;
+}
+
+.workout_header__actions {
+    animation-delay: 0.3s;
+}
+
+/* Estados de carga y hover mejorados */
+.workout_header__button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.workout_header__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.workout_header__button:disabled:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .workout_header__button,
+    .workout_header__quote,
+    .workout_header__container > * {
+        animation: none;
+        transition: none;
+    }
+    
+    .workout_header__button:hover,
+    .workout_header__quote:hover {
+        transform: none;
+    }
+}
+
+/* Tema oscuro (preparado para futuras implementaciones) */
+@media (prefers-color-scheme: dark) {
+    .workout_header {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+    }
+    
+    .workout_header__motivation {
+        background: linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.1) 0%,
+            rgba(16, 185, 129, 0.1) 100%
+        );
+    }
+}

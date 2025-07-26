@@ -105,7 +105,7 @@ const RecentWorkouts = () => {
     };
 
     const handleNewWorkout = () => {
-        navigate('/workouts/new');
+        navigate('/workouts/create');
     };
 
     const handleViewAll = () => {

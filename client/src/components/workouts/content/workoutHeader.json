@@ -1,0 +1,22 @@
+{
+    "motivationalQuotes": [
+        "¡Hoy es el día perfecto para superar tus límites!",
+        "Cada repetición te acerca más a tu mejor versión",
+        "El único entrenamiento malo es el que no haces",
+        "Tu cuerpo puede hacerlo. Es tu mente la que necesitas convencer",
+        "No se trata de ser perfecto, se trata de ser mejor que ayer",
+        "El dolor que sientes hoy será la fuerza que sientes mañana",
+        "Los campeones entrenan, los perdedores se quejan",
+        "Tu única competencia eres tú mismo de ayer",
+        "El éxito comienza cuando sales de tu zona de confort",
+        "Cada gota de sudor es un paso hacia tu objetivo",
+        "No esperes la motivación, crea el hábito",
+        "La disciplina pesa gramos, el arrepentimiento pesa toneladas"
+    ],
+    "buttons": {
+        "createWorkout": "Crear Entrenamiento",
+        "viewWorkouts": "Ver Entrenamientos"
+    },
+    "title": "Entrenamientos",
+    "subtitle": "Gestiona tus sesiones de entrenamiento"
+}
