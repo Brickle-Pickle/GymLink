@@ -1,0 +1,93 @@
+{
+    "title": "Constructor de Rutinas",
+    "subtitle": "Crea tu rutina personalizada arrastrando ejercicios",
+    "form": {
+        "routineName": {
+            "label": "Nombre de la Rutina",
+            "placeholder": "Ej: Push Day, Piernas, Cardio..."
+        },
+        "routineLevel": {
+            "label": "Nivel de Dificultad",
+            "options": {
+                "beginner": "Principiante",
+                "intermediate": "Intermedio",
+                "advanced": "Avanzado"
+            }
+        },
+        "routineDescription": {
+            "label": "Descripción (Opcional)",
+            "placeholder": "Describe el objetivo de esta rutina..."
+        },
+        "estimatedDuration": {
+            "label": "Duración Estimada (minutos)",
+            "placeholder": "60"
+        }
+    },
+    "exerciseLibrary": {
+        "title": "Biblioteca de Ejercicios",
+        "searchPlaceholder": "Buscar ejercicios...",
+        "categories": {
+            "all": "Todos",
+            "chest": "Pecho",
+            "back": "Espalda",
+            "shoulders": "Hombros",
+            "arms": "Brazos",
+            "legs": "Piernas",
+            "core": "Core",
+            "cardio": "Cardio"
+        },
+        "exerciseTypes": {
+            "reps-weight": "Reps/Peso",
+            "reps-time": "Reps/Tiempo",
+            "time-distance": "Tiempo/Distancia",
+            "reps-only": "Solo Reps",
+            "time-only": "Solo Tiempo",
+            "distance-only": "Solo Distancia"
+        }
+    },
+    "routineBuilder": {
+        "title": "Tu Rutina",
+        "emptyState": {
+            "title": "Arrastra ejercicios aquí",
+            "description": "Selecciona ejercicios de la biblioteca y arrástralos para crear tu rutina"
+        },
+        "exerciseCard": {
+            "setsLabel": "Series:",
+            "repsLabel": "Reps:",
+            "weightLabel": "Peso:",
+            "timeLabel": "Tiempo:",
+            "distanceLabel": "Distancia:",
+            "restLabel": "Descanso:",
+            "removeButton": "Eliminar",
+            "editButton": "Editar"
+        },
+        "addExerciseButton": "Añadir Ejercicio",
+        "totalExercises": "ejercicios",
+        "totalExercise": "ejercicio",
+        "estimatedTime": "Tiempo estimado:"
+    },
+    "buttons": {
+        "saveRoutine": "Guardar Rutina",
+        "cancel": "Cancelar",
+        "preview": "Vista Previa",
+        "addToLibrary": "Añadir a Biblioteca"
+    },
+    "dragAndDrop": {
+        "dragHere": "Suelta aquí para añadir",
+        "dragActive": "Suelta para añadir el ejercicio",
+        "reorderHint": "Arrastra para reordenar"
+    },
+    "validation": {
+        "nameRequired": "El nombre de la rutina es obligatorio",
+        "levelRequired": "Selecciona un nivel de dificultad",
+        "exercisesRequired": "Añade al menos un ejercicio a la rutina",
+        "durationInvalid": "La duración debe ser un número válido"
+    },
+    "notifications": {
+        "routineSaved": "Rutina guardada correctamente",
+        "exerciseAdded": "Ejercicio añadido a la rutina",
+        "exerciseRemoved": "Ejercicio eliminado de la rutina",
+        "exerciseUpdated": "Ejercicio actualizado",
+        "saveError": "Error al guardar la rutina"
+    }
+}

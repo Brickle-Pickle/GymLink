@@ -678,12 +678,7 @@
     }
 }
 
-/* Dark mode support (if implemented) */
-@media (prefers-color-scheme: dark) {
-    .routines_grid {
-        /* Dark mode styles would go here */
-    }
-}
+
 
 /* Print styles */
 @media print {

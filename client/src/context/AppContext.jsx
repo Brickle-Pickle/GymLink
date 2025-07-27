@@ -32,6 +32,17 @@ export const AppContextProvider = ({ children }) => {
     // Notifications
     const [notifications, setNotifications] = useState([]);
     
+    // Routine Builder state
+    const [currentRoutine, setCurrentRoutine] = useState({
+        name: '',
+        level: '',
+        description: '',
+        estimatedDuration: '',
+        exercises: []
+    });
+    const [availableExercises, setAvailableExercises] = useState([]);
+    const [isDragActive, setIsDragActive] = useState(false);
+    
     // Check authentication status on app load
     useEffect(() => {
         // TODO: Check for stored auth token and validate
@@ -165,6 +176,89 @@ export const AppContextProvider = ({ children }) => {
         closeMobileMenu();
     };
 
+    // Routine Builder functions
+    const addExerciseToRoutine = (exercise) => {
+        const routineExercise = {
+            id: Date.now().toString(),
+            exerciseId: exercise.id,
+            name: exercise.name,
+            type: exercise.type,
+            category: exercise.category,
+            sets: 3,
+            reps: exercise.type.includes('reps') ? 12 : null,
+            weight: exercise.type.includes('weight') ? 0 : null,
+            time: exercise.type.includes('time') ? 0 : null,
+            distance: exercise.type.includes('distance') ? 0 : null,
+            restTime: 60
+        };
+        
+        setCurrentRoutine(prev => ({
+            ...prev,
+            exercises: [...prev.exercises, routineExercise]
+        }));
+    };
+
+    const removeExerciseFromRoutine = (exerciseId) => {
+        setCurrentRoutine(prev => ({
+            ...prev,
+            exercises: prev.exercises.filter(ex => ex.id !== exerciseId)
+        }));
+    };
+
+    const updateRoutineExercise = (exerciseId, updates) => {
+        setCurrentRoutine(prev => ({
+            ...prev,
+            exercises: prev.exercises.map(ex => 
+                ex.id === exerciseId ? { ...ex, ...updates } : ex
+            )
+        }));
+    };
+
+    const reorderRoutineExercises = (startIndex, endIndex) => {
+        setCurrentRoutine(prev => {
+            const exercises = [...prev.exercises];
+            const [removed] = exercises.splice(startIndex, 1);
+            exercises.splice(endIndex, 0, removed);
+            return { ...prev, exercises };
+        });
+    };
+
+    const resetRoutineBuilder = () => {
+        setCurrentRoutine({
+            name: '',
+            level: '',
+            description: '',
+            estimatedDuration: '',
+            exercises: []
+        });
+    };
+
+    const saveRoutine = async (routineData) => {
+        setIsLoading(true);
+        try {
+            // TODO: Implement actual save logic
+            console.log('Saving routine:', routineData);
+            
+            // Mock successful save
+            addNotification({
+                type: 'success',
+                message: 'Rutina guardada correctamente'
+            });
+            
+            resetRoutineBuilder();
+            return { success: true };
+        } catch (error) {
+            console.error('Save routine failed:', error);
+            addNotification({
+                type: 'error',
+                message: 'Error al guardar la rutina'
+            });
+            return { success: false, error: error.message };
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     const value = {
         // Loading state
         isLoading,
@@ -206,6 +300,20 @@ export const AppContextProvider = ({ children }) => {
         // Errors
         error,
         setError,
+        
+        // Routine Builder
+        currentRoutine,
+        setCurrentRoutine,
+        availableExercises,
+        setAvailableExercises,
+        isDragActive,
+        setIsDragActive,
+        addExerciseToRoutine,
+        removeExerciseFromRoutine,
+        updateRoutineExercise,
+        reorderRoutineExercises,
+        resetRoutineBuilder,
+        saveRoutine
     }
 
     return (
