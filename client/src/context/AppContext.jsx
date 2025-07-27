@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import apiService from "../services/api";
 
 const AppContext = createContext();
 
@@ -18,7 +19,7 @@ export const AppContextProvider = ({ children }) => {
     const [error, setError] = useState(null);
 
     // User authentication state
-    const [user, setUser] = useState(false);
+    const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     
     // UI state
@@ -45,24 +46,25 @@ export const AppContextProvider = ({ children }) => {
     
     // Check authentication status on app load
     useEffect(() => {
-        // TODO: Check for stored auth token and validate
         const checkAuth = async () => {
+            setIsLoading(true);
             try {
-                const token = localStorage.getItem('authToken');
+                const token = localStorage.getItem('accessToken');
                 if (token) {
-                    // TODO: Validate token with backend
-                    // For now, just set mock user
-                    setUser({
-                        id: '1',
-                        name: 'Juan Pérez',
-                        email: 'juan@example.com',
-                        avatar: null
-                    });
-                    setIsAuthenticated(true);
+                    const response = await apiService.getCurrentUser();
+                    if (response.success) {
+                        setUser(response.user);
+                        setIsAuthenticated(true);
+                    } else {
+                        // Token is invalid, clear it
+                        apiService.clearTokens();
+                    }
                 }
             } catch (error) {
                 console.error('Auth check failed:', error);
-                localStorage.removeItem('authToken');
+                apiService.clearTokens();
+            } finally {
+                setIsLoading(false);
             }
         };
         
@@ -79,22 +81,22 @@ export const AppContextProvider = ({ children }) => {
     const login = async (credentials) => {
         setIsLoading(true);
         try {
-            // TODO: Implement actual login logic
-            console.log('Logging in with:', credentials);
+            const response = await apiService.login(credentials);
             
-            // Mock successful login
-            const mockUser = {
-                id: '1',
-                name: 'Juan Pérez',
-                email: credentials.email,
-                avatar: null
-            };
-            
-            setUser(mockUser);
-            setIsAuthenticated(true);
-            localStorage.setItem('authToken', 'mock-token');
-            
-            return { success: true, user: mockUser };
+            if (response.success) {
+                setUser(response.user);
+                setIsAuthenticated(true);
+                
+                addNotification({
+                    type: 'success',
+                    title: 'Login exitoso',
+                    message: `Bienvenido de vuelta, ${response.user.username}!`
+                });
+                
+                return { success: true, user: response.user };
+            } else {
+                return { success: false, error: response.message };
+            }
         } catch (error) {
             console.error('Login failed:', error);
             return { success: false, error: error.message };
@@ -103,33 +105,39 @@ export const AppContextProvider = ({ children }) => {
         }
     };
 
-    const logout = () => {
-        setUser(null);
-        setIsAuthenticated(false);
-        localStorage.removeItem('authToken');
-        navigate('/');
+    const logout = async () => {
+        setIsLoading(true);
+        try {
+            await apiService.logout();
+        } catch (error) {
+            console.error('Logout error:', error);
+        } finally {
+            setUser(null);
+            setIsAuthenticated(false);
+            setIsLoading(false);
+            navigate('/');
+        }
     };
 
     const register = async (userData) => {
         setIsLoading(true);
         try {
-            // TODO: Implement actual registration logic
-            console.log('Registering user:', userData);
+            const response = await apiService.register(userData);
             
-            // Mock successful registration
-            const newUser = {
-                id: Date.now().toString(),
-                name: userData.username, // Use username as name for consistency
-                username: userData.username,
-                email: userData.email,
-                avatar: null
-            };
-            
-            setUser(newUser);
-            setIsAuthenticated(true);
-            localStorage.setItem('authToken', 'mock-token');
-            
-            return { success: true, user: newUser };
+            if (response.success) {
+                setUser(response.user);
+                setIsAuthenticated(true);
+                
+                addNotification({
+                    type: 'success',
+                    title: 'Registro exitoso',
+                    message: `¡Bienvenido a GymLink, ${response.user.username}!`
+                });
+                
+                return { success: true, user: response.user };
+            } else {
+                return { success: false, error: response.message };
+            }
         } catch (error) {
             console.error('Registration failed:', error);
             return { success: false, error: error.message };
@@ -237,10 +245,10 @@ export const AppContextProvider = ({ children }) => {
     const saveRoutine = async (routineData) => {
         setIsLoading(true);
         try {
-            // TODO: Implement actual save logic
+            // TODO: Implement actual save logic with API
             console.log('Saving routine:', routineData);
             
-            // Mock successful save
+            // Mock successful save for now
             addNotification({
                 type: 'success',
                 message: 'Rutina guardada correctamente'
@@ -297,10 +305,6 @@ export const AppContextProvider = ({ children }) => {
         notifications,
         addNotification,
         removeNotification,
-
-        // Errors
-        error,
-        setError,
         
         // Routine Builder
         currentRoutine,
@@ -314,12 +318,16 @@ export const AppContextProvider = ({ children }) => {
         updateRoutineExercise,
         reorderRoutineExercises,
         resetRoutineBuilder,
-        saveRoutine
-    }
+        saveRoutine,
+        
+        // Error handling
+        error,
+        setError
+    };
 
     return (
         <AppContext.Provider value={value}>
             {children}
         </AppContext.Provider>
     );
-}
+};

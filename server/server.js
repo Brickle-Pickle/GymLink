@@ -4,8 +4,14 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
-const connectDB = require('./config/database');
-const exerciseRoutes = require('./routes/exercises');
+// Correct import - destructure connectDB from the exported object
+const { connectDB } = require('./config/database');
+// const exerciseRoutes = require('./routes/exercises'); // Commented out - file doesn't exist yet
+const authRoutes = require('./routes/auth');
+
+// Test User model import
+const User = require('./models/User');
+console.log('User model loaded:', typeof User, typeof User.create);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -34,7 +40,8 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // Routes
-app.use('/api/exercises', exerciseRoutes);
+app.use('/api/auth', authRoutes);
+// app.use('/api/exercises', exerciseRoutes); // Commented out - file doesn't exist yet
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

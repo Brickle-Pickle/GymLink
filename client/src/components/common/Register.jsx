@@ -6,7 +6,7 @@ import registerContent from './content/register.json';
 import './styles/register.css';
 
 const Register = () => {
-    const { register, isLoading, addNotification } = useAppContext();
+    const { register, isLoading, addNotification, setUser } = useAppContext();
     const navigate = useNavigate();
     
     const [formData, setFormData] = useState({
@@ -183,13 +183,20 @@ const Register = () => {
                     message: registerContent.success.message
                 });
                 
+                setUser(true);
+
                 // Redirect after a short delay
                 setTimeout(() => {
                     navigate('/dashboard');
                 }, 2000);
             } else {
                 // Handle registration errors
-                if (result.error.includes('email')) {
+                if (result.error && (
+                    result.error.includes('email') || 
+                    result.error.includes('correo') || 
+                    result.error.includes('registrado') ||
+                    result.error.includes('ya está')
+                )) {
                     setErrors(prev => ({
                         ...prev,
                         email: registerContent.form.email.error.exists

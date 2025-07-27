@@ -5,14 +5,19 @@ let client;
 
 const connectDB = async () => {
     try {
-        const uri = process.env.DB_URI;
+        // Use MONGODB_URI instead of DB_URI to match .env file
+        const uri = process.env.MONGODB_URI || process.env.URI;
+        
+        if (!uri) {
+            throw new Error('MongoDB URI not found in environment variables');
+        }
         
         client = new MongoClient(uri, {
             useUnifiedTopology: true,
         });
 
         await client.connect();
-        db = client.db();
+        db = client.db('gymlink');
         
         console.log('MongoDB connected successfully');
         

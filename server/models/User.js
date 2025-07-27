@@ -1,6 +1,6 @@
-import { getDB } from '../config/database.js';
-import { ObjectId } from 'mongodb';
-import bcrypt from 'bcrypt';
+const { getDB } = require('../config/database');
+const { ObjectId } = require('mongodb');
+const bcrypt = require('bcrypt');
 
 class User {
     constructor(userData) {
@@ -59,7 +59,14 @@ class User {
 
     // Create new user
     static async create(userData) {
+        console.log('User.create called with data:', { 
+            username: userData.username, 
+            email: userData.email,
+            hasPassword: !!userData.password 
+        });
+        
         const db = getDB();
+        console.log('Database connection obtained');
         
         // Check if email or username already exists
         const existingUser = await db.collection('users').findOne({
@@ -69,21 +76,34 @@ class User {
             ]
         });
         
+        console.log('Existing user check result:', existingUser ? 'User exists' : 'No existing user');
+        
         if (existingUser) {
             throw new Error('Email or username already exists');
         }
 
         // Hash password if provided
         if (userData.password) {
+            console.log('Hashing password...');
             userData.password = await User.hashPassword(userData.password);
+            console.log('Password hashed successfully');
         }
 
         const user = new User(userData);
+        console.log('User object created, attempting to insert into database...');
+        
         const result = await db.collection('users').insertOne(user);
+        console.log('Insert result:', { 
+            insertedId: result.insertedId, 
+            acknowledged: result.acknowledged 
+        });
         
         // Return user without password
         const { password, ...userWithoutPassword } = user;
-        return { _id: result.insertedId, ...userWithoutPassword };
+        const finalUser = { _id: result.insertedId, ...userWithoutPassword };
+        console.log('User created successfully with ID:', result.insertedId);
+        
+        return finalUser;
     }
 
     // Find user by email
@@ -310,4 +330,4 @@ class User {
     }
 }
 
-export default User;
+module.exports = User;
