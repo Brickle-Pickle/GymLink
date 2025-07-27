@@ -1,0 +1,71 @@
+{
+    "title": "Mis Rutinas",
+    "subtitle": "Gestiona y organiza tus rutinas de entrenamiento",
+    "emptyState": {
+        "title": "No tienes rutinas creadas",
+        "description": "Crea tu primera rutina para comenzar a entrenar de forma organizada",
+        "buttonText": "Crear Primera Rutina"
+    },
+    "routineCard": {
+        "exercisesLabel": "ejercicios",
+        "exerciseLabel": "ejercicio",
+        "durationLabel": "min aprox.",
+        "lastUsedLabel": "Última vez:",
+        "neverUsedLabel": "Nunca usado",
+        "difficultyLabel": "Dificultad:",
+        "targetMusclesLabel": "Músculos objetivo:",
+        "editButton": "Editar",
+        "shareButton": "Compartir",
+        "deleteButton": "Eliminar",
+        "startWorkoutButton": "Iniciar Entrenamiento"
+    },
+    "filters": {
+        "all": "Todas",
+        "recent": "Recientes",
+        "favorites": "Favoritas",
+        "byDifficulty": "Por Dificultad",
+        "byMuscleGroup": "Por Grupo Muscular"
+    },
+    "difficulty": {
+        "beginner": "Principiante",
+        "intermediate": "Intermedio",
+        "advanced": "Avanzado"
+    },
+    "muscleGroups": {
+        "chest": "Pecho",
+        "back": "Espalda",
+        "shoulders": "Hombros",
+        "arms": "Brazos",
+        "legs": "Piernas",
+        "core": "Core",
+        "fullBody": "Cuerpo Completo"
+    },
+    "actions": {
+        "createNew": "Nueva Rutina",
+        "search": "Buscar rutinas...",
+        "sortBy": "Ordenar por:",
+        "viewMode": "Vista:",
+        "gridView": "Cuadrícula",
+        "listView": "Lista"
+    },
+    "sortOptions": {
+        "name": "Nombre",
+        "dateCreated": "Fecha de creación",
+        "lastUsed": "Última vez usado",
+        "difficulty": "Dificultad",
+        "duration": "Duración"
+    },
+    "confirmDelete": {
+        "title": "¿Eliminar rutina?",
+        "message": "Esta acción no se puede deshacer. ¿Estás seguro de que quieres eliminar esta rutina?",
+        "confirmButton": "Eliminar",
+        "cancelButton": "Cancelar"
+    },
+    "shareModal": {
+        "title": "Compartir Rutina",
+        "description": "Comparte esta rutina con otros usuarios",
+        "copyLinkButton": "Copiar Enlace",
+        "qrCodeButton": "Código QR",
+        "linkCopied": "Enlace copiado al portapapeles"
+    }
+}
