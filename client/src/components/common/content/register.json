@@ -1,0 +1,64 @@
+{
+    "title": "Crear Cuenta",
+    "subtitle": "Únete a GymLink y comienza tu viaje fitness",
+    "form": {
+        "username": {
+            "label": "Nombre de Usuario",
+            "placeholder": "Ingresa tu nombre de usuario",
+            "error": {
+                "required": "El nombre de usuario es obligatorio",
+                "minLength": "El nombre de usuario debe tener al menos 3 caracteres",
+                "maxLength": "El nombre de usuario no puede tener más de 20 caracteres",
+                "invalid": "El nombre de usuario solo puede contener letras, números y guiones bajos"
+            }
+        },
+        "email": {
+            "label": "Correo Electrónico",
+            "placeholder": "Ingresa tu correo electrónico",
+            "error": {
+                "required": "El correo electrónico es obligatorio",
+                "invalid": "Por favor ingresa un correo electrónico válido",
+                "exists": "Este correo electrónico ya está registrado"
+            }
+        },
+        "password": {
+            "label": "Contraseña",
+            "placeholder": "Crea una contraseña segura",
+            "error": {
+                "required": "La contraseña es obligatoria",
+                "minLength": "La contraseña debe tener al menos 8 caracteres",
+                "weak": "La contraseña debe contener al menos una mayúscula, una minúscula y un número"
+            }
+        },
+        "confirmPassword": {
+            "label": "Confirmar Contraseña",
+            "placeholder": "Confirma tu contraseña",
+            "error": {
+                "required": "Debes confirmar tu contraseña",
+                "mismatch": "Las contraseñas no coinciden"
+            }
+        }
+    },
+    "buttons": {
+        "register": "Crear Cuenta",
+        "registering": "Creando cuenta...",
+        "loginLink": "¿Ya tienes cuenta? Inicia sesión"
+    },
+    "terms": {
+        "text": "Al crear una cuenta, aceptas nuestros",
+        "termsLink": "Términos de Servicio",
+        "and": "y",
+        "privacyLink": "Política de Privacidad"
+    },
+    "success": {
+        "title": "¡Cuenta creada exitosamente!",
+        "message": "Bienvenido a GymLink. Tu cuenta ha sido creada y ya puedes comenzar a usar la aplicación."
+    },
+    "validation": {
+        "passwordStrength": {
+            "weak": "Débil",
+            "medium": "Media",
+            "strong": "Fuerte"
+        }
+    }
+}

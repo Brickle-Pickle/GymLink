@@ -119,7 +119,8 @@ export const AppContextProvider = ({ children }) => {
             // Mock successful registration
             const newUser = {
                 id: Date.now().toString(),
-                name: userData.name,
+                name: userData.username, // Use username as name for consistency
+                username: userData.username,
                 email: userData.email,
                 avatar: null
             };

@@ -53,6 +53,28 @@ const DashboardHeader = () => {
     });
   };
 
+  // Get user's first name safely
+  const getUserFirstName = () => {
+    if (!user) return '';
+    
+    // Check for name property first
+    if (user.name && typeof user.name === 'string') {
+      return user.name.split(' ')[0];
+    }
+    
+    // Fallback to username if name is not available
+    if (user.username && typeof user.username === 'string') {
+      return user.username;
+    }
+    
+    // Fallback to email prefix if neither name nor username is available
+    if (user.email && typeof user.email === 'string') {
+      return user.email.split('@')[0];
+    }
+    
+    return 'Usuario';
+  };
+
   // Mock stats - these would come from API/context in real app
   const stats = [
     {
@@ -117,7 +139,7 @@ const DashboardHeader = () => {
           <h1 className="dashboard-header__greeting-text">
             {getGreeting()}{user ? (
               <span className="dashboard-header__greeting-name">
-                , {user.name.split(' ')[0]}!
+                , {getUserFirstName()}!
               </span>
             ) : '!'}
           </h1>

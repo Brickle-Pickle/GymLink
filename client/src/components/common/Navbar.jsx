@@ -32,13 +32,6 @@ const Navbar = () => {
   const [user, setUser] = useState(null); // This will come from auth context later
   const dropdownRef = useRef(null);
 
-  // Mock user data - replace with actual auth context
-  const mockUser = {
-    name: 'Juan Pérez',
-    email: 'juan@example.com',
-    avatar: null
-  };
-
   // Navigation items with their corresponding icons
   const navigationItems = [
     { 
@@ -252,7 +245,7 @@ const Navbar = () => {
           </div>
 
           {/* User Authentication */}
-          {mockUser ? (
+          {user ? (
             <div className="navbar__user-dropdown" ref={dropdownRef}>
               <button
                 className={`navbar__user-btn ${
@@ -261,15 +254,15 @@ const Navbar = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <div className="navbar__user-avatar">
-                  {mockUser.avatar ? (
-                    <img src={mockUser.avatar} alt={mockUser.name} />
+                  {user.avatar ? (
+                    <img src={user.avatar} alt={user.name} />
                   ) : (
-                    getUserInitials(mockUser.name)
+                    getUserInitials(user.name)
                   )}
                 </div>
                 <div className="navbar__user-info">
-                  <span className="navbar__user-name">{mockUser.name}</span>
-                  <span className="navbar__user-email">{mockUser.email}</span>
+                  <span className="navbar__user-name">{user.name}</span>
+                  <span className="navbar__user-email">{user.email}</span>
                 </div>
                 <FiChevronDown className="navbar__dropdown-icon" />
               </button>
@@ -372,19 +365,19 @@ const Navbar = () => {
         </div>
 
         {/* Mobile User Section */}
-        {mockUser ? (
+        {user ? (
           <div className="navbar__mobile-user">
             <div className="navbar__mobile-user-info">
               <div className="navbar__user-avatar">
-                {mockUser.avatar ? (
-                  <img src={mockUser.avatar} alt={mockUser.name} />
+                {user.avatar ? (
+                  <img src={user.avatar} alt={user.name} />
                 ) : (
-                  getUserInitials(mockUser.name)
+                  getUserInitials(user.name)
                 )}
               </div>
               <div className="navbar__user-info">
-                <span className="navbar__user-name">{mockUser.name}</span>
-                <span className="navbar__user-email">{mockUser.email}</span>
+                <span className="navbar__user-name">{user.name}</span>
+                <span className="navbar__user-email">{user.email}</span>
               </div>
             </div>
             <div className="navbar__mobile-user-actions">

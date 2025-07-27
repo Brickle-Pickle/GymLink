@@ -15,6 +15,7 @@ import WorkoutEdit from './components/workouts/WorkoutEdit'
 // Common
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
+import Register from './components/common/Register'
 
 // Create a separate component for the app content
 function AppContent() {
@@ -30,12 +31,14 @@ function AppContent() {
             <main className="main-content">
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/dashboard" element={<Home />} />
                     <Route path="/workouts" element={<Workouts />} />
                     <Route path="/workouts/create" element={<WorkoutsCreate />} />
                     <Route path="/workouts/edit/:id" element={<WorkoutEdit />} />
                     <Route path="/workouts/history" element={<WorkoutsHistory />} />
                     <Route path="/workouts/history/:id" element={<WorkoutHistoryExercise />} />
                     <Route path="/routines" element={<Routines />} />
+                    <Route path="/register" element={<Register />} />
                 </Routes>
             </main>
             <Footer />
