@@ -1,0 +1,22 @@
+{
+    "motivationalQuotes": [
+        "¡Diseña la rutina que te llevará al siguiente nivel!",
+        "Una buena rutina es el primer paso hacia el éxito",
+        "La consistencia en tu rutina es la clave del progreso",
+        "Cada rutina bien planificada es una inversión en tu futuro",
+        "No se trata de la rutina perfecta, sino de la que puedes seguir",
+        "Tu rutina de hoy es tu fuerza de mañana",
+        "Planifica tu trabajo y trabaja tu plan",
+        "Una rutina estructurada es libertad disfrazada",
+        "El éxito es la suma de pequeños esfuerzos repetidos día tras día",
+        "Tu rutina es tu compromiso contigo mismo",
+        "La disciplina de seguir una rutina te dará los resultados que buscas",
+        "Cada rutina es una oportunidad de superarte a ti mismo"
+    ],
+    "buttons": {
+        "createRoutine": "Crear Rutina",
+        "viewRoutines": "Ver Rutinas"
+    },
+    "title": "Rutinas de Entrenamiento",
+    "subtitle": "Diseña y gestiona tus rutinas personalizadas"
+}
