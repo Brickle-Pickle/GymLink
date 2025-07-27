@@ -1,0 +1,44 @@
+// GymLink db
+// Create
+use gymlink
+
+// Collections
+// Exercises
+db.createCollection("exercises")
+
+// Users
+db.createCollection("users")
+
+// Routines
+db.createCollection("routines")
+
+// Reports
+db.createCollection("reports")
+
+// UserRoutines
+db.createCollection("userRoutines")
+
+// UserExercises
+db.createCollection("userExercises")
+
+// ExerciseReports
+db.createCollection("exerciseReports")
+
+// UserReports
+db.createCollection("userReports")
+
+// Defaults
+db.exercises.insertOne({
+    _id: ObjectId,
+    name: String,
+    type: String,
+    category: String,
+    equipment: String,
+    difficulty: String,
+    description: String,
+    instructions: [String],
+    isPublic: Boolean,
+    createdBy: ObjectId,
+    createdAt: Date,
+    updatedAt: Date
+})

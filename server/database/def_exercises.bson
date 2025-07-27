@@ -1,0 +1,273 @@
+// Exercises
+db.exercises.insertMany([
+    {
+        name: 'Flexiones',
+        type: 'reps-only',
+        category: 'chest',
+        equipment: 'Peso corporal',
+        difficulty: 'beginner',
+        description: 'Ejercicio básico para fortalecer el pecho y los brazos',
+        instructions: [
+            'Colócate en posición de plancha con las manos separadas al ancho de los hombros',
+            'Mantén el cuerpo recto desde la cabeza hasta los talones',
+            'Baja el pecho hacia el suelo doblando los codos',
+            'Empuja hacia arriba hasta la posición inicial'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Sentadillas',
+        type: 'reps-only',
+        category: 'legs',
+        equipment: 'Peso corporal',
+        difficulty: 'beginner',
+        description: 'Ejercicio fundamental para fortalecer piernas y glúteos',
+        instructions: [
+            'Párate con los pies separados al ancho de los hombros',
+            'Baja como si fueras a sentarte en una silla invisible',
+            'Mantén la espalda recta y el peso en los talones',
+            'Sube hasta la posición inicial'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Plancha',
+        type: 'time-only',
+        category: 'core',
+        equipment: 'Peso corporal',
+        difficulty: 'beginner',
+        description: 'Ejercicio isométrico para fortalecer el core completo',
+        instructions: [
+            'Colócate en posición de flexión pero apoyado en los antebrazos',
+            'Mantén el cuerpo recto desde la cabeza hasta los talones',
+            'Contrae el abdomen y mantén la posición',
+            'Respira de manera controlada durante todo el ejercicio'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Burpees',
+        type: 'reps-only',
+        category: 'functional',
+        equipment: 'Peso corporal',
+        difficulty: 'intermediate',
+        description: 'Ejercicio completo que combina fuerza y cardio',
+        instructions: [
+            'Comienza de pie, luego baja a posición de cuclillas',
+            'Coloca las manos en el suelo y salta hacia atrás a posición de plancha',
+            'Haz una flexión y salta hacia adelante a posición de cuclillas',
+            'Salta hacia arriba con los brazos extendidos'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Dominadas',
+        type: 'reps-only',
+        category: 'back',
+        equipment: 'Barra de dominadas',
+        difficulty: 'intermediate',
+        description: 'Ejercicio para desarrollar la fuerza de espalda y brazos',
+        instructions: [
+            'Cuelga de la barra con las palmas hacia adelante',
+            'Mantén los brazos completamente extendidos',
+            'Tira hacia arriba hasta que la barbilla pase la barra',
+            'Baja de forma controlada hasta la posición inicial'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Fondos en paralelas',
+        type: 'reps-only',
+        category: 'chest',
+        equipment: 'Barras paralelas',
+        difficulty: 'intermediate',
+        description: 'Ejercicio para desarrollar pecho, tríceps y hombros',
+        instructions: [
+            'Sujétate a las barras paralelas con los brazos extendidos',
+            'Baja el cuerpo doblando los codos hasta 90 grados',
+            'Mantén el torso ligeramente inclinado hacia adelante',
+            'Empuja hacia arriba hasta la posición inicial'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Zancadas',
+        type: 'reps-only',
+        category: 'legs',
+        equipment: 'Peso corporal',
+        difficulty: 'beginner',
+        description: 'Ejercicio unilateral para fortalecer piernas y mejorar el equilibrio',
+        instructions: [
+            'Da un paso largo hacia adelante con una pierna',
+            'Baja hasta que ambas rodillas formen ángulos de 90 grados',
+            'Mantén el torso erguido durante todo el movimiento',
+            'Regresa a la posición inicial y repite con la otra pierna'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Mountain Climbers',
+        type: 'reps-time',
+        category: 'cardio',
+        equipment: 'Peso corporal',
+        difficulty: 'beginner',
+        description: 'Ejercicio cardiovascular que también fortalece el core',
+        instructions: [
+            'Comienza en posición de plancha alta',
+            'Lleva una rodilla hacia el pecho alternadamente',
+            'Mantén las caderas bajas y el core contraído',
+            'Realiza el movimiento de forma rápida y controlada'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Elevaciones laterales',
+        type: 'reps-weight',
+        category: 'shoulders',
+        equipment: 'Mancuernas',
+        difficulty: 'beginner',
+        description: 'Ejercicio para desarrollar los deltoides laterales',
+        instructions: [
+            'Párate con una mancuerna en cada mano a los lados',
+            'Levanta los brazos hacia los lados hasta la altura de los hombros',
+            'Mantén una ligera flexión en los codos',
+            'Baja de forma controlada hasta la posición inicial'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Curl de bíceps',
+        type: 'reps-weight',
+        category: 'arms',
+        equipment: 'Mancuernas',
+        difficulty: 'beginner',
+        description: 'Ejercicio básico para desarrollar los músculos del bíceps',
+        instructions: [
+            'Párate con una mancuerna en cada mano, brazos extendidos',
+            'Mantén los codos pegados al torso',
+            'Flexiona los brazos llevando las mancuernas hacia los hombros',
+            'Baja de forma controlada hasta la posición inicial'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Press de banca',
+        type: 'reps-weight',
+        category: 'chest',
+        equipment: 'Barra y banco',
+        difficulty: 'intermediate',
+        description: 'Ejercicio fundamental para desarrollar el pecho',
+        instructions: [
+            'Acuéstate en el banco con los pies firmes en el suelo',
+            'Agarra la barra con las manos separadas más que el ancho de hombros',
+            'Baja la barra hasta tocar el pecho',
+            'Empuja la barra hacia arriba hasta extender completamente los brazos'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Peso muerto',
+        type: 'reps-weight',
+        category: 'back',
+        equipment: 'Barra',
+        difficulty: 'intermediate',
+        description: 'Ejercicio compuesto para desarrollar espalda, piernas y core',
+        instructions: [
+            'Párate con los pies separados al ancho de caderas',
+            'Agarra la barra con las manos separadas al ancho de hombros',
+            'Mantén la espalda recta y levanta la barra extendiendo caderas y rodillas',
+            'Baja la barra de forma controlada hasta el suelo'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Abdominales crunch',
+        type: 'reps-only',
+        category: 'core',
+        equipment: 'Peso corporal',
+        difficulty: 'beginner',
+        description: 'Ejercicio básico para fortalecer los músculos abdominales',
+        instructions: [
+            'Acuéstate boca arriba con las rodillas flexionadas',
+            'Coloca las manos detrás de la cabeza sin entrelazar los dedos',
+            'Contrae el abdomen y levanta los hombros del suelo',
+            'Baja de forma controlada sin relajar completamente'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Correr en cinta',
+        type: 'time-distance',
+        category: 'cardio',
+        equipment: 'Cinta de correr',
+        difficulty: 'beginner',
+        description: 'Ejercicio cardiovascular para mejorar la resistencia',
+        instructions: [
+            'Sube a la cinta y comienza con una velocidad cómoda',
+            'Mantén una postura erguida y brazos relajados',
+            'Respira de forma rítmica y controlada',
+            'Ajusta la velocidad según tu nivel de condición física'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
+    {
+        name: 'Remo con barra',
+        type: 'reps-weight',
+        category: 'back',
+        equipment: 'Barra',
+        difficulty: 'intermediate',
+        description: 'Ejercicio para desarrollar la musculatura de la espalda',
+        instructions: [
+            'Inclínate hacia adelante manteniendo la espalda recta',
+            'Agarra la barra con las manos separadas al ancho de hombros',
+            'Tira de la barra hacia el abdomen contrayendo los omóplatos',
+            'Baja la barra de forma controlada hasta extender los brazos'
+        ],
+        isPublic: true,
+        createdBy: '-1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+    }
+])
