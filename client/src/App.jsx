@@ -9,6 +9,7 @@ import Workouts from './user_pages/Workouts'
 // Sub pages
 import WorkoutsCreate from './user_pages/WorkoutsCreate'
 import WorkoutsHistory from './components/workouts/WorkoutHistory'
+import WorkoutHistoryExercise from './components/workouts/WorkoutHistoryExercise'
 import WorkoutEdit from './components/workouts/WorkoutEdit'
 // Common
 import Navbar from './components/common/Navbar'
@@ -32,6 +33,7 @@ function AppContent() {
                     <Route path="/workouts/create" element={<WorkoutsCreate />} />
                     <Route path="/workouts/edit/:id" element={<WorkoutEdit />} />
                     <Route path="/workouts/history" element={<WorkoutsHistory />} />
+                    <Route path="/workouts/history/:id" element={<WorkoutHistoryExercise />} />
                 </Routes>
             </main>
             <Footer />

@@ -1,0 +1,59 @@
+{
+    "title": "Detalles del Entrenamiento",
+    "backButton": "Volver al Historial",
+    "workoutInfo": {
+        "date": "Fecha",
+        "duration": "Duración",
+        "totalExercises": "Total de Ejercicios",
+        "totalSets": "Total de Series",
+        "personalRecords": "Récords Personales"
+    },
+    "exerciseDetails": {
+        "sets": "Series",
+        "set": "Serie",
+        "reps": "Repeticiones",
+        "weight": "Peso",
+        "time": "Tiempo",
+        "distance": "Distancia",
+        "personalRecord": "¡Récord Personal!",
+        "restTime": "Descanso",
+        "notes": "Notas"
+    },
+    "units": {
+        "kg": "kg",
+        "lbs": "lbs",
+        "seconds": "seg",
+        "minutes": "min",
+        "hours": "h",
+        "km": "km",
+        "miles": "mi",
+        "meters": "m"
+    },
+    "actions": {
+        "repeatWorkout": "Repetir Entrenamiento",
+        "editWorkout": "Editar Entrenamiento",
+        "deleteWorkout": "Eliminar Entrenamiento",
+        "shareWorkout": "Compartir Entrenamiento"
+    },
+    "summary": {
+        "title": "Resumen del Entrenamiento",
+        "totalVolume": "Volumen Total",
+        "averageRest": "Descanso Promedio",
+        "intensity": "Intensidad",
+        "muscleGroups": "Grupos Musculares"
+    },
+    "loading": {
+        "message": "Cargando detalles del entrenamiento..."
+    },
+    "error": {
+        "notFound": "Entrenamiento no encontrado",
+        "loadError": "Error al cargar el entrenamiento",
+        "tryAgain": "Intentar de nuevo"
+    },
+    "confirmDelete": {
+        "title": "¿Eliminar entrenamiento?",
+        "message": "Esta acción no se puede deshacer. ¿Estás seguro de que quieres eliminar este entrenamiento?",
+        "confirm": "Eliminar",
+        "cancel": "Cancelar"
+    }
+}
