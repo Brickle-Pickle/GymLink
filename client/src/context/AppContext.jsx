@@ -43,6 +43,9 @@ export const AppContextProvider = ({ children }) => {
     });
     const [availableExercises, setAvailableExercises] = useState([]);
     const [isDragActive, setIsDragActive] = useState(false);
+
+    // Login 
+    const [showUserLogin, setShowUserLogin] = useState(false);
     
     // Check authentication status on app load
     useEffect(() => {
@@ -288,6 +291,8 @@ export const AppContextProvider = ({ children }) => {
         login,
         logout,
         register,
+        showUserLogin,
+        setShowUserLogin,
         
         // UI state
         isMobileMenuOpen,

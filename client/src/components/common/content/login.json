@@ -1,0 +1,47 @@
+{
+    "title": "Iniciar Sesión",
+    "subtitle": "Accede a tu cuenta de GymLink",
+    "form": {
+        "identifier": {
+            "label": "Usuario o Correo",
+            "placeholder": "Ingresa tu usuario o correo electrónico",
+            "error": {
+                "required": "El usuario o correo es obligatorio",
+                "invalid": "Por favor ingresa un usuario o correo válido"
+            }
+        },
+        "password": {
+            "label": "Contraseña",
+            "placeholder": "Ingresa tu contraseña",
+            "error": {
+                "required": "La contraseña es obligatoria",
+                "invalid": "Contraseña incorrecta"
+            }
+        }
+    },
+    "buttons": {
+        "login": "Iniciar Sesión",
+        "logging": "Iniciando sesión...",
+        "registerLink": "¿No tienes cuenta? Regístrate",
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "close": "Cerrar"
+    },
+    "options": {
+        "rememberMe": "Recordarme",
+        "or": "o"
+    },
+    "social": {
+        "google": "Continuar con Google",
+        "facebook": "Continuar con Facebook"
+    },
+    "success": {
+        "title": "¡Bienvenido de vuelta!",
+        "message": "Has iniciado sesión exitosamente en GymLink."
+    },
+    "errors": {
+        "general": "Error al iniciar sesión. Por favor, verifica tus credenciales.",
+        "network": "Error de conexión. Por favor, inténtalo de nuevo.",
+        "userNotFound": "Usuario no encontrado. Verifica tus credenciales.",
+        "invalidCredentials": "Credenciales inválidas. Verifica tu usuario y contraseña."
+    }
+}

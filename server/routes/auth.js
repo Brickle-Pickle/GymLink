@@ -120,20 +120,26 @@ router.post('/register', async (req, res) => {
 });
 
 // Login endpoint
+// Login endpoint
 router.post('/login', async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { identifier, password } = req.body; // Changed from email to identifier
         
         // Validation
-        if (!email || !password) {
+        if (!identifier || !password) {
             return res.status(400).json({
                 success: false,
-                message: 'Email y contraseña son obligatorios'
+                message: 'Usuario/email y contraseña son obligatorios'
             });
         }
         
-        // Find user by email
-        const user = await User.findByEmail(email.trim().toLowerCase());
+        // Find user by email or username
+        let user = await User.findByEmail(identifier.trim().toLowerCase());
+        if (!user) {
+            // If not found by email, try by username
+            user = await User.findByUsername(identifier.trim());
+        }
+        
         if (!user) {
             return res.status(401).json({
                 success: false,

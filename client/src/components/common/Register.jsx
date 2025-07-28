@@ -6,7 +6,7 @@ import registerContent from './content/register.json';
 import './styles/register.css';
 
 const Register = () => {
-    const { register, isLoading, addNotification, setUser } = useAppContext();
+    const { register, isLoading, addNotification, setUser, user } = useAppContext();
     const navigate = useNavigate();
     
     const [formData, setFormData] = useState({
@@ -233,7 +233,7 @@ const Register = () => {
         return className;
     };
 
-    if (registrationSuccess) {
+    if (registrationSuccess || user) {
         return (
             <div className="register">
                 <div className="register__container">
