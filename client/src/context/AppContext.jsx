@@ -50,23 +50,59 @@ export const AppContextProvider = ({ children }) => {
     // Check authentication status on app load
     useEffect(() => {
         const checkAuth = async () => {
+            console.log('AppContext: Starting auth check...');
             setIsLoading(true);
             try {
                 const token = localStorage.getItem('accessToken');
+                console.log('AppContext: Token found:', !!token);
+                
                 if (token) {
+                    console.log('AppContext: Calling getCurrentUser...');
                     const response = await apiService.getCurrentUser();
+                    console.log('AppContext: getCurrentUser response:', response);
+                    console.log('AppContext: Response success:', response?.success);
+                    console.log('AppContext: Response user:', response?.user);
+                    
                     if (response.success) {
+                        console.log('AppContext: Setting user and authenticated state');
                         setUser(response.user);
                         setIsAuthenticated(true);
                     } else {
-                        // Token is invalid, clear it
+                        console.log('AppContext: Token invalid, clearing tokens');
+                        console.log('AppContext: Response error:', response.error || response.message);
+                        // If token is expired, try to refresh it
+                        if (response.message === 'Token expirado') {
+                            console.log('AppContext: Token expired, attempting refresh...');
+                            const refreshed = await apiService.refreshAccessToken();
+                            if (refreshed) {
+                                console.log('AppContext: Token refreshed, retrying getCurrentUser...');
+                                const retryResponse = await apiService.getCurrentUser();
+                                if (retryResponse.success) {
+                                    setUser(retryResponse.user);
+                                    setIsAuthenticated(true);
+                                    return;
+                                }
+                            }
+                        }
+                        console.log('AppContext: Clearing expired/invalid tokens');
                         apiService.clearTokens();
+                        setUser(null);
+                        setIsAuthenticated(false);
                     }
+                } else {
+                    console.log('AppContext: No token found');
+                    setUser(null);
+                    setIsAuthenticated(false);
                 }
             } catch (error) {
-                console.error('Auth check failed:', error);
+                console.error('AppContext: Auth check failed:', error);
+                console.error('AppContext: Error details:', error.message);
+                console.error('AppContext: Error stack:', error.stack);
                 apiService.clearTokens();
+                setUser(null);
+                setIsAuthenticated(false);
             } finally {
+                console.log('AppContext: Auth check completed');
                 setIsLoading(false);
             }
         };
@@ -327,7 +363,10 @@ export const AppContextProvider = ({ children }) => {
         
         // Error handling
         error,
-        setError
+        setError,
+
+        // Backend
+        apiService
     };
 
     return (

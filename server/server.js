@@ -8,6 +8,7 @@ require('dotenv').config();
 const { connectDB } = require('./config/database');
 // const exerciseRoutes = require('./routes/exercises'); // Commented out - file doesn't exist yet
 const authRoutes = require('./routes/auth');
+const dashboardRoutes = require('./routes/dashboard'); // Add dashboard routes
 
 // Test User model import
 const User = require('./models/User');
@@ -41,6 +42,7 @@ connectDB();
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/dashboard', dashboardRoutes); // Add dashboard routes
 // app.use('/api/exercises', exerciseRoutes); // Commented out - file doesn't exist yet
 
 // Health check endpoint

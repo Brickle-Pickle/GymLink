@@ -6,12 +6,20 @@
     "default": "¡Hola"
   },
   "stats": {
+    "totalExercises": {
+      "label": "Total ejercicios",
+      "unit": ""
+    },
     "workoutsThisWeek": {
       "label": "Entrenamientos esta semana",
       "unit": ""
     },
     "totalWorkouts": {
       "label": "Total entrenamientos",
+      "unit": ""
+    },
+    "totalSets": {
+      "label": "Total series",
       "unit": ""
     },
     "currentStreak": {

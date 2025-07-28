@@ -1,0 +1,61 @@
+[vite] connecting...
+client:827 [vite] connected.
+react-dom_client.js?v=2ece3932:17985 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+DashboardHeader.jsx:41 DashboardHeader: Checking dependencies...
+DashboardHeader.jsx:42 User: null
+DashboardHeader.jsx:43 ApiService: ApiService {baseURL: 'http://localhost:5000/api', accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…YzMH0.yTlRD4Di6pWRdXJoLhF430H8FcKeQLnRszkZPizXsso', refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…UzMH0.pYCy1OJl38i_fHsCKPb32jINFkIlI_3nUvXBdeTNAwo'}
+DashboardHeader.jsx:44 IsAuthenticated: false
+DashboardHeader.jsx:47 DashboardHeader: User or apiService not available
+AppContext.jsx:53 AppContext: Starting auth check...
+AppContext.jsx:57 AppContext: Token found: true
+AppContext.jsx:60 AppContext: Calling getCurrentUser...
+api.js:54 ApiService: Making request to http://localhost:5000/api/auth/me
+DashboardHeader.jsx:41 DashboardHeader: Checking dependencies...
+DashboardHeader.jsx:42 User: null
+DashboardHeader.jsx:43 ApiService: ApiService {baseURL: 'http://localhost:5000/api', accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…YzMH0.yTlRD4Di6pWRdXJoLhF430H8FcKeQLnRszkZPizXsso', refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…UzMH0.pYCy1OJl38i_fHsCKPb32jINFkIlI_3nUvXBdeTNAwo'}
+DashboardHeader.jsx:44 IsAuthenticated: false
+DashboardHeader.jsx:47 DashboardHeader: User or apiService not available
+AppContext.jsx:53 AppContext: Starting auth check...
+AppContext.jsx:57 AppContext: Token found: true
+AppContext.jsx:60 AppContext: Calling getCurrentUser...
+api.js:54 ApiService: Making request to http://localhost:5000/api/auth/me
+api.js:58 ApiService: Response status 200 for /auth/me
+api.js:198 ApiService: getCurrentUser response: {success: true, user: {…}}
+AppContext.jsx:62 AppContext: getCurrentUser response: {success: true, user: {…}}
+AppContext.jsx:63 AppContext: Response success: true
+AppContext.jsx:64 AppContext: Response user: {id: '68865e4e775bbbb21185fb5b', username: 'Elmo_Tor', email: 'antoniotxdr@gmail.com', settings: {…}, stats: {…}, …}
+AppContext.jsx:67 AppContext: Setting user and authenticated state
+AppContext.jsx:105 AppContext: Auth check completed
+DashboardHeader.jsx:41 DashboardHeader: Checking dependencies...
+DashboardHeader.jsx:42 User: {id: '68865e4e775bbbb21185fb5b', username: 'Elmo_Tor', email: 'antoniotxdr@gmail.com', settings: {…}, stats: {…}, …}
+DashboardHeader.jsx:43 ApiService: ApiService {baseURL: 'http://localhost:5000/api', accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…YzMH0.yTlRD4Di6pWRdXJoLhF430H8FcKeQLnRszkZPizXsso', refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…UzMH0.pYCy1OJl38i_fHsCKPb32jINFkIlI_3nUvXBdeTNAwo'}
+DashboardHeader.jsx:44 IsAuthenticated: true
+DashboardHeader.jsx:52 DashboardHeader: Fetching stats...
+dashboard_functions.js:7 DashboardFunctions: Fetching stats for user: 68865e4e775bbbb21185fb5b
+api.js:54 ApiService: Making request to http://localhost:5000/api/dashboard/stats
+api.js:58 ApiService: Response status 200 for /auth/me
+api.js:198 ApiService: getCurrentUser response: {success: true, user: {…}}
+AppContext.jsx:62 AppContext: getCurrentUser response: {success: true, user: {…}}
+AppContext.jsx:63 AppContext: Response success: true
+AppContext.jsx:64 AppContext: Response user: {id: '68865e4e775bbbb21185fb5b', username: 'Elmo_Tor', email: 'antoniotxdr@gmail.com', settings: {…}, stats: {…}, …}
+AppContext.jsx:67 AppContext: Setting user and authenticated state
+AppContext.jsx:105 AppContext: Auth check completed
+DashboardHeader.jsx:41 DashboardHeader: Checking dependencies...
+DashboardHeader.jsx:42 User: {id: '68865e4e775bbbb21185fb5b', username: 'Elmo_Tor', email: 'antoniotxdr@gmail.com', settings: {…}, stats: {…}, …}
+DashboardHeader.jsx:43 ApiService: ApiService {baseURL: 'http://localhost:5000/api', accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…YzMH0.yTlRD4Di6pWRdXJoLhF430H8FcKeQLnRszkZPizXsso', refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiO…UzMH0.pYCy1OJl38i_fHsCKPb32jINFkIlI_3nUvXBdeTNAwo'}
+DashboardHeader.jsx:44 IsAuthenticated: true
+DashboardHeader.jsx:52 DashboardHeader: Fetching stats...
+dashboard_functions.js:7 DashboardFunctions: Fetching stats for user: 68865e4e775bbbb21185fb5b
+api.js:54 ApiService: Making request to http://localhost:5000/api/dashboard/stats
+api.js:58 ApiService: Response status 200 for /dashboard/stats
+dashboard_functions.js:12 DashboardFunctions: Raw response: {success: true, data: {…}}
+dashboard_functions.js:13 DashboardFunctions: Response data: {}
+dashboard_functions.js:14 DashboardFunctions: Returning: {}
+DashboardHeader.jsx:54 DashboardHeader: Received stats data: {}
+DashboardHeader.jsx:83 DashboardHeader: Setting stats: (4) [{…}, {…}, {…}, {…}]
+api.js:58 ApiService: Response status 200 for /dashboard/stats
+dashboard_functions.js:12 DashboardFunctions: Raw response: {success: true, data: {…}}
+dashboard_functions.js:13 DashboardFunctions: Response data: {}
+dashboard_functions.js:14 DashboardFunctions: Returning: {}
+DashboardHeader.jsx:54 DashboardHeader: Received stats data: {}
+DashboardHeader.jsx:83 DashboardHeader: Setting stats: (4) [{…}, {…}, {…}, {…}]

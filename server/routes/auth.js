@@ -120,7 +120,6 @@ router.post('/register', async (req, res) => {
 });
 
 // Login endpoint
-// Login endpoint
 router.post('/login', async (req, res) => {
     try {
         const { identifier, password } = req.body; // Changed from email to identifier
